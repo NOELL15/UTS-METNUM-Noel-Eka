@@ -1,0 +1,18 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Soal 1: Persamaan Non-Linier (30 poin)
+# Variabel yang diketahui
+L = 0.5  # Henry
+C = 10e-6  # Farad
+f_target = 1000  # Target frekuensi dalam Hz
+pi = np.pi
+
+# a) Fungsi untuk menghitung f(R) dan f'(R)
+def f_resonansi(R):
+    """Menghitung frekuensi resonansi f berdasarkan nilai R"""
+    return (1 / (2 * pi)) * np.sqrt(1 / (L * C) - (R**2) / (4 * L**2))
+
+def df_resonansi(R):
+    """Menghitung turunan pertama dari frekuensi resonansi f terhadap R"""
+    return -(R / (2 * pi * L**2)) / np.sqrt(1 / (L * C
